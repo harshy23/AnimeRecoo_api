@@ -88,6 +88,6 @@ https://animerecoo-api.onrender.com
 ## Static Files
 - Static files are served via WhiteNoise in production. Run `python manage.py collectstatic` before deploying.
 
----
+
 
 
