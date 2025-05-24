@@ -57,26 +57,26 @@ A Django REST API for anime recommendations and management.
 
 ### Register a New User
 
-![Project Logo](register.PNG)
+![Project Logo](register.png)
 
 ---
 
 ### Search for Anime
-![Project Logo](search.PNG)
+![Project Logo](search.png)
 
 
 ### Get Recommendations
-![Project Logo](reco.PNG)
+![Project Logo](reco.png)
 
 ---
 
 ### Set User Preferences
-![Project Logo](prefrence add.PNG)
+![Project Logo](prefrence_add.png)
 
 ---
 
 ### login and Obtain JWT Token
-![Project Logo](token.PNG)
+![Project Logo](token.png)
 ---
 
 For more details, visit your deployed API at:  
