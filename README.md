@@ -71,7 +71,8 @@ A Django REST API for anime recommendations and management.
 ---
 
 ### Set User Preferences
-![Project Logo](prefrence_add.png)
+
+![Project Logo]prefrence_add.png
 
 ---
 
