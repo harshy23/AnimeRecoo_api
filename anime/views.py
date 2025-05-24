@@ -11,22 +11,22 @@ import json
 @api_view(['POST'])
 def new_user(request):
     User = get_user_model()
-    if request.methos=="POST":
+    if request.method == "POST":
         name = request.data.get("name")
         email = request.data.get("email")
         password = request.data.get("password")
 
-        if User.objects.filter(username = name).exists():
-            return Response({"error":"Name Already exitst"},status=400)
-        elif User.objects.filter(email = email).exista():
-            return Response({"error":"Email already used"},status=400)
+        if User.objects.filter(username=name).exists():
+            return Response({"error": "Name Already exists"}, status=400)
+        elif User.objects.filter(email=email).exists():
+            return Response({"error": "Email already used"}, status=400)
         else:
-            user = User.objects.create_user(username = name , email = email , password = password)
+            user = User.objects.create_user(username=name, email=email, password=password)
             user.save()
 
-            return Response({"message":"user created"},status =201)
+            return Response({"message": "user created"}, status=201)
     else:
-        return Response({"error":"Invalid REquest method"},status=405)
+        return Response({"error": "Invalid Request method"}, status=405)
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def anime_search(request):
