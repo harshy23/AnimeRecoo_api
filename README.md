@@ -10,37 +10,33 @@ A Django REST API for anime recommendations and management.
 
 
 ### Steps
-1. **Clone the repository:**
-   ```sh
-   git clone <your-repo-url>
-   cd AnimeRecoo_api
    ```
-2. **Create and activate a virtual environment:**
-   ```sh
+1. **Create and activate a virtual environment:**
+   ```
    python -m venv venv
    venv\Scripts\activate   # On Windows
    # or
    source venv/bin/activate   # On Mac/Linux
    ```
-3. **Install dependencies:**
-   ```sh
+2. **Install dependencies:**
+   ```
    pip install -r requirements.txt
    ```
-4. **Apply migrations:**
-   ```sh
+3. **Apply migrations:**
+   ```
    python manage.py migrate
    ```
-5. **Create a superuser (for admin access):**
-   ```sh
+4. **Create a superuser (for admin access):**
+   ```
    python manage.py createsuperuser
    ```
-6. **Run the development server:**
-   ```sh
+5. **Run the development server:**
+   ```
    python manage.py runserver
    ```
-7. **Access the API:**
-   - API root: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-   - Admin: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+6. **Access the API:**
+   - API root: [https://animerecoo-api.onrender.com]
+   - Admin: [https://animerecoo-api.onrender.com/admin/]
 
 ---
 
@@ -48,11 +44,11 @@ A Django REST API for anime recommendations and management.
 
 | Method | Endpoint             | Description                        |
 |--------|----------------------|------------------------------------|
-| POST   | /login/              | Register a new user                |
+| POST   | /register/           | Register a new user                |
 | GET    | /search/?q=...       | Search for anime                   |
 | POST   | /recommendations/    | Get anime recommendations          |
-| POST   | /preferences/        | Set user genre preferences         |
-| POST   | /token/              | Obtain JWT token                   |
+|GET/POST| /preferences/        | Set or get user genre preferences  |
+| POST   | /token/              | login andObtain JWT token          |
 | POST   | /token/refresh/      | Refresh JWT token                  |
 
 ---
@@ -60,109 +56,27 @@ A Django REST API for anime recommendations and management.
 ## 3. Sample Requests and Responses
 
 ### Register a New User
-**Request:**
-```http
-POST /login/
-Content-Type: application/json
 
-{
-  "username": "testuser",
-  "password": "testpass"
-}
-```
-**Response:**
-```json
-{
-  "message": "User created successfully"
-}
-```
+![Project Logo](register.PNG)
 
 ---
 
 ### Search for Anime
-**Request:**
-```http
-GET /search/?q=naruto
-Authorization: Bearer <access_token>
-```
-**Response:**
-```json
-[
-  {
-    "id": 1,
-    "title": "Naruto",
-    "genre": "Action",
-    "episodes": 220
-  }
-]
-```
+![Project Logo](search.PNG)
 
----
 
 ### Get Recommendations
-**Request:**
-```http
-POST /recommendations/
-Authorization: Bearer <access_token>
-Content-Type: application/json
-
-{
-  "user_id": 1
-}
-```
-**Response:**
-```json
-[
-  {
-    "id": 2,
-    "title": "Attack on Titan",
-    "genre": "Action",
-    "episodes": 75
-  }
-]
-```
+![Project Logo](reco.PNG)
 
 ---
 
 ### Set User Preferences
-**Request:**
-```http
-POST /preferences/
-Authorization: Bearer <access_token>
-Content-Type: application/json
-
-{
-  "genres": ["Action", "Adventure"]
-}
-```
-**Response:**
-```json
-{
-  "message": "Preferences updated"
-}
-```
+![Project Logo](prefrence add.PNG)
 
 ---
 
-### Obtain JWT Token
-**Request:**
-```http
-POST /token/
-Content-Type: application/json
-
-{
-  "username": "testuser",
-  "password": "testpass"
-}
-```
-**Response:**
-```json
-{
-  "refresh": "<refresh_token>",
-  "access": "<access_token>"
-}
-```
-
+### login and Obtain JWT Token
+![Project Logo](token.PNG)
 ---
 
 For more details, visit your deployed API at:  
@@ -176,4 +90,4 @@ https://animerecoo-api.onrender.com
 
 ---
 
-**Contact:** For questions, open an issue or contact the maintainer.
+
